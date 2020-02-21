@@ -1,34 +1,47 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Binita Shah
+ * Student ID: 991549124
+ * Midterm Exam
  */
 package status;
 
 /**
  *
- * @author srinivsi
+ * 
+ * modified by Binita
  */
-public class StausUser 
-{
-   public void statusDetail(String code)
-{
-switch(code.toUpperCase())
-        {
-        case "ZERO": System.out.println("REJECTED");
-        break;
-        case "ONE": System.out.println("PENDING");
-        break;
-        case "TWO":
-        System.out.println("PROCESSING");
-        break;
-        case "THREE": 
-            System.out.println("APPROVED");
-        break;
-        default:
-         System.out.println("NOT VALID CODE");
-        break;
-        }
+public class StausUser {
+
+    public enum Code {
+        ZERO, ONE, TWO, THREE
+    };
+    private Code cod;
+
+    public enum Status {
+        REJECTED, PENDING, PROCESSING, APPROVED, NOT_VALID_CODE
+    };
+    private Status stat;
+
+    public StausUser(Code cod, Status stat) {
+        this.cod = cod;
+        this.stat = stat;
+    }
+
+    public Code getCod() {
+        return cod;
+    }
+
+    public void setCod(Code cod) {
+        this.cod = cod;
+    }
+
+    public Status getStat() {
+        return stat;
+    }
+
+    public void setStat(Status stat) {
+        this.stat = stat;
+    }
+
 }
  
-}
